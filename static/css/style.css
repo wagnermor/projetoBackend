@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-image: url(/static/img/MicrosoftTeams-image-5.png);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personagem {
+    height: 400px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    padding: 15px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+img {
+  height: 100%;
+}
