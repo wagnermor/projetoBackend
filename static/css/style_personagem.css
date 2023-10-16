@@ -8,15 +8,20 @@
 
 html {
     font-size: 62.5%;
-    background-image: url('../img/background_characters.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 body {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    background-image: url('../img/background_characters.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -28,7 +33,7 @@ body {
     align-content: center;
     width: 70vw;
     max-width: 30rem;
-    height: 100%;
+    /* height: 100%; */
     margin: 10vh auto;
     background-color: rgba(242, 242, 242, 0.167);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.428);
@@ -53,11 +58,10 @@ h1 {
 
 img {
     margin-bottom: 3rem;
-    height: 35rem;
+    height: auto;
     width: 25rem;
     max-width: 100%;
     object-fit: cover;
-
     transition: opacity 0.3s;
 }
 
