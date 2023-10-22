@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harry Potter Generation</title>
+
+    <!-- Já estão feitos os links com os arquivos bootstrap utilizados
+    no projeto e salvos na pasta static/css e static/js-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- exemplo de importação de uma folha de estilos direto de um link-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href=""><img src="/static/img/logo_harrypotter.png"></a>
+            <a class="navbar-brand" href="https://escolakoru.com.br"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="container">
+        <!-- Dentro deste conteiner precisamos carregar o conteúdo de
+        cadastro.html ou de index.html-->
+        {% block content %} {% endblock %}
+    </div>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

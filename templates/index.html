@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Este template corresponde à página que mostrar uma listagem
+de todos os personagems cadastrados-->
+<div class="container mt-3">
+
+    <h1>Personagens</h1>
+    <a href="{{url_for('criar_personagem')}}" class="btn btn-primary">Adicionar</a>
+   
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Casa</th>
+                <th scope="col">Imagem</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- É preciso repetir a linha da tabela para cada
+            personagem existente no dicionário -->
+            {% for id, personagem in personagens.items() %}
+            <tr>
+                <td class="view">{{ Id }}</td>
+                <td class="view">{{ personagem['nome'] }}</td>
+                <td class="view">{{ personagem['descricao'] }}</td>
+                <td class="view">{{ personagem['casa'] }}</td>
+                <td class="view"><img src="{{ personagem['imagem']}}" alt="thumbnail" class="img-thumbnail"></td>
+                <td class="view"><a href="{{url_for('exibir_personagem', id=id)}}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
