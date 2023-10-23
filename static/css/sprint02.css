@@ -25,6 +25,8 @@ nav {
 }
 nav a {
     transition: scale 5ms;
+    color: #fff;
+    background-color: #4f4c4c;
 }
 nav a:hover {
     cursor: pointer;
@@ -54,7 +56,11 @@ section {
     display: flex;
     flex-direction: column;
     padding: .5rem;
-    background-color: dodgerblue;
+    background-color: yellowgreen;
+    background-position: center;
+    background-image: #;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 80svh;
 }
 section h2 {

@@ -15,12 +15,13 @@
                 <img src="{{ personagem['imagem'] }}" alt="{{ personagem['nome'] }}">
             </a>
             {% endfor %}
+            <a href="/">Gerenciamento de personagens</a>
         </nav>
     </header>
     <main>
         <article>
             {% for id, personagem in personagens.items() %}
-            <section id="{{ id }}">
+            <section id="{{ id }}" style="background-image: url({{ personagem['imagem'] }})">
                 <h2>{{ personagem['nome'] }}</h2>
                 <div>
                     <img src="{{ personagem['imagem'] }}" alt="{{ personagem['nome'] }}">
