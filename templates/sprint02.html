@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens - Sprint02</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sprint02.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            {% for id, personagem in personagens.items() %}
+            {% set image = personagem['imagem'] %}
+            <a href="#{{ id }}">
+                <img src="{{ personagem['imagem'] }}" alt="{{ personagem['nome'] }}">
+            </a>
+            {% endfor %}
+        </nav>
+    </header>
+    <main>
+        <article>
+            {% for id, personagem in personagens.items() %}
+            <section id="{{ id }}">
+                <h2>{{ personagem['nome'] }}</h2>
+                <div>
+                    <img src="{{ personagem['imagem'] }}" alt="{{ personagem['nome'] }}">
+                    <p>{{personagem['descricao'] }}</p>
+                </div>
+
+            </section>
+            {% endfor %}
+        </article>
+    </main>
+    
+</body>
+</html>
