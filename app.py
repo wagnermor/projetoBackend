@@ -53,7 +53,9 @@ def criar_produto():
 #Abrir o template cadastro.html apenas com o id preenchido para permitir novo cadastro
 #Dar função aos botões excluir e salvar no template cadastro.html
     
-
+@app.route("/sprint02")
+def sprint02():
+    return render_template('sprint02.html', personagens = repositorio.retornar_produtos())
 
 app.run(debug=True)
 

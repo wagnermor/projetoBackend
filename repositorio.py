@@ -11,13 +11,32 @@ produtos = {
         "casa": "Grifinória",
         "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCvY6FQqSv-KcXHy8dsfDyt23A6DtgcmxDjfEsqSJC&s"
     }
-    # ,
-    # 3: {
-    #     "nome": "Ron",
-    #     "descricao": "Ronald Abílio[33] Weasley, mais conhecido como Rony, é um bruxo inglês sangue puro[1] nascido em 1 de março de 1980 e o sexto filho de Arthur e Molly Weasley. Ele também é o irmão mais novo de Gui, Carlinhos, Percy, Fred e Jorge e o irmão mais velho de Gina. Rony cresceu junto de seus irmãos n'A Toca, pelos arredores de Ottery St. Catchpole em Devon.",
-    #     "casa": "Grifinória",
-    #     "imagem": "ron.png"
-    # },
+    ,
+    3: {
+        "nome": "Ron",
+        "descricao": "Ronald Abílio[33] Weasley, mais conhecido como Rony, é um bruxo inglês sangue puro[1] nascido em 1 de março de 1980 e o sexto filho de Arthur e Molly Weasley. Ele também é o irmão mais novo de Gui, Carlinhos, Percy, Fred e Jorge e o irmão mais velho de Gina. Rony cresceu junto de seus irmãos n'A Toca, pelos arredores de Ottery St. Catchpole em Devon.",
+        "casa": "Grifinória",
+        "imagem": "https://i.pinimg.com/originals/18/fe/63/18fe634da34814e7dd1b6dcaa6e93091.jpg"
+    },
+    4: {
+        "nome": "Draco Malfoy",
+        "descricao": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi rerum omnis, labore veniam beatae unde quod fuga et ut iure blanditiis vel aut nesciunt consequuntur inventore, quis maxime autem animi?",
+        "casa": "Lorem",
+        "imagem": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Draco_Mal.JPG/220px-Draco_Mal.JPG"
+    },
+    5: {
+        "nome": "Ginevra Weasley",
+        "descricao": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi rerum omnis, labore veniam beatae unde quod fuga et ut iure blanditiis vel aut nesciunt consequuntur inventore, quis maxime autem animi?",
+        "casa": "Lorem",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU8DmrPxw8bBXSW0h1CSWVqZ4NScdnqRcqwVGd5RCQmj708OY0TUSkVAR-HDk6hd0_3QU"
+    },
+    6: {
+        "nome": "Neville Longbottom",
+        "descricao": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi rerum omnis, labore veniam beatae unde quod fuga et ut iure blanditiis vel aut nesciunt consequuntur inventore, quis maxime autem animi?",
+        "casa": "Lorem",
+        "imagem": "https://i2-prod.mylondon.news/incoming/article22014262.ece/ALTERNATES/s1200e/1_GD14477555.jpg"
+    },
+    
 }
 
 
