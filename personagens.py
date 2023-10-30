@@ -1,60 +1,38 @@
-#Criando um dicionário para armazenar dados dos personagens
-dicionario = {
-    1: {
-        "nome": "Harry Potter",
-        "raca": "Humano",
-        "casa": "Grifinória",
-        "cabelo": "preto",
-        "olhos": "Azuis",
-        "nascimento": "31/07/1990"
-    },
-    2: {
-        "nome": "Ron Wesley",
-        "raca": "Humano",
-        "casa": "Grifinória",
-        "cabelo": "Laranja",
-        "olhos": "Verdes",
-        "nascimento": "01/03/1980"
-    },
-    3: {
-        "nome": "Hermione",
-        "raca": "Humano",
-        "casa": "Grifinória",
-        "cabelo": "Castanho",
-        "olhos": "Castanhos escuros",
-        "nascimento": "19/09/1979"
-    },
-}
-
-
 #Importando o Flask
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request, redirect, url_for
+import repositorio
 
 app = Flask(__name__)
 
-#criando rotas de acesso aos personagens
-
-@app.route("/harry/<int:personagem_id>")
-
-def mostra_harry(personagem_id ):
-    return render_template('harry.html', **dicionario[personagem_id])
-
-@app.route("/ron/<int:personagem_id>")
-
-def mostra_ron(personagem_id):
-    return render_template('ron.html', **dicionario[personagem_id])
-
-@app.route("/hermione/<int:personagem_id>")
-
-def mostra_hermione(personagem_id):
-    return render_template('hermione.html', **dicionario[personagem_id])
-
-
+# Página inicial
 @app.route("/")
+def home():
+    lista_personagens = repositorio.retornar_personagens()
+    return render_template("tabela.html", dados=lista_personagens)
 
-def mostra_personagens():
-    return render_template('personagens.html', personagens = dicionario)
+@app.route("/personagem/<int:id>", methods=['GET', 'POST'])
+def editar_personagem(id):
+    if request.method == "POST":
+        if "excluir" in request.form:
+            repositorio.remover_personagem(id)
+            return redirect(url_for('home'))
+        elif "salvar" in request.form:
+            id = request.form["id"]
+            nome = request.form["nome"]
+            descricao = request.form["descricao"]
+            casa = request.form["casa"]
+            imagem = request.form["imagem"]
+        dados_retornados = repositorio.retornar_personagem(id)
+        if dados_retornados:
+            repositorio.atualizar_personagem(id=id, nome=nome, descricao=descricao, casa=casa, imagem=imagem)
+        else:
+            repositorio.criar_personagem(nome=nome, descricao=descricao, casa=casa, imagem=imagem)
+        return redirect(url_for('home'))
+    else:
+        id, nome, descricao, casa, imagem = repositorio.retornar_personagem(id)
+        return render_template("cadastro.html", id=id, nome=nome, descricao=descricao, casa=casa, imagem=imagem)
+    
+
 
 app.run(debug=True)
 

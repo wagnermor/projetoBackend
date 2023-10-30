@@ -1,0 +1,49 @@
+<!-- Este template corresponde à página que o usuário acessa para
+cadastrar um novo personagem ou editar um personagem existente -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens - Sprint03</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sprint03.css') }}">
+</head>
+<body>
+    <h1>Editar personagem</h1>
+    <form method="POST" enctype="multipart/form-data" action="" class="needs-validation" data-toggle="validator">
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input type="number" class="form-control" id="id" name="id" value="{{ id }}" required>
+            <div class="invalid-feedback">Campo obrigatório.</div>
+        </div>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ nome }}" required>
+            <div class="invalid-feedback">Campo obrigatório.</div>
+        </div>
+        <div class="form-group">
+            <label for="raca">Descrição:</label>
+            <input type="text" class="form-control" id="descricao" name="descricao" value="{{ descricao }}" required>
+            <div class="invalid-feedback">Campo obrigatório.</div>
+        </div>
+        <div class="form-group">
+            <label for="casa">Casa:</label>
+            <input type="text" class="form-control" id="casa" name="casa" value="{{ casa }}" required>
+            <div class="invalid-feedback">Campo obrigatório.</div>
+        </div>
+        <div class="form-group">
+            <label for="imagem">Imagem:</label>
+            <p><input type="text" class="form-control" id="imagem" name="imagem" value="{{ imagem }}"></p>
+            <p>{% if imagem %}
+            <img src="{{ imagem }}" style="max-width: 200px; max-height: 200px;">
+            {% endif %}</p>    
+        </div>
+        
+      
+        <input type="submit" class="btn btn-primary" name="salvar" value="salvar">
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    
+        <input type="submit" class="btn btn-danger" name="excluir" value="excluir">
+    </form>
+</body>
+</html>

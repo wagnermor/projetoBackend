@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens - Sprint03</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sprint02.css') }}">
+</head>
+<body>
+    <div class="container mt-3">
+
+        <h1>Personagens</h1>
+        <a href="{{url_for('editar_personagem', id=0)}}" class="btn btn-primary" id="botao">Adicionar</a>
+       
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">Casa</th>
+                    <th scope="col">Imagem</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- É preciso repetir a linha da tabela para cada
+                personagem -->
+                {% for id, nome, descricao, casa, imagem in dados %}
+                <tr>
+                    <td class="view">{{ id }}</td>
+                    <td class="view">{{ nome }}</td>
+                    <td class="view">{{ descricao }}</td>
+                    <td class="view">{{ casa }}</td>
+                    <td class="view"><img src="{{ imagem }}" alt="thumbnail" class="img-thumbnail"></td>
+                    <td class="view"><a href="{{url_for('editar_personagem', id=id)}}">Editar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
